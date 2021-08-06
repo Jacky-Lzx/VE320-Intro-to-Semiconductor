@@ -1,0 +1,513 @@
+\documentclass{beamer}
+%Information to be included in the title page:
+% \title{Sample title}
+% \author{Anonymous}
+% \institute{Overleaf}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage[]{hyperref}
+
+\usetheme[]{default}
+\begin{document}
+\renewcommand{\d}{\: \mathrm{d} }
+\newcommand{\e}{\mathrm{e}}
+
+
+\title[] {Recitation Class for Final Exam \\ Chapter 10-12}
+
+\author[lzx]{Zexi Li}
+
+\institute[email]{lzx12138@sjtu.edu.cn}
+
+\date{2021.08.03}
+
+\frame{\titlepage}
+
+\AtBeginSection[]
+{
+  \begin{frame}
+    \frametitle{Table of Contents}
+    \tableofcontents[currentsection]
+  \end{frame}
+}
+
+\begin{frame}
+    \frametitle{Outline}
+    \tableofcontents
+\end{frame}
+
+
+% \section{Overview}
+%     \begin{frame} \frametitle{Overview}
+%     \end{frame}
+
+
+\section{Chapter 10 - Fundamentals of the Metal–Oxide–Semiconductor Field-Effect Transistor}
+% \subsection{The Two-Terminal MOS Structure}
+    \begin{frame} \frametitle{Metal–Oxide–Semiconductor}
+        \begin{minipage}{\linewidth}
+            \begin{minipage}{0.45\linewidth}
+                \begin{figure}[H]
+                    \centering
+                    \includegraphics[width=0.8\linewidth]{MOS-graph-horizontal.jpg}
+                    \label{fig:MOS-graph-horizontal.jpg}
+                \end{figure}
+            \end{minipage}
+            \begin{minipage}{0.45\linewidth}
+                \begin{figure}[H]
+                    \centering
+                    \includegraphics[width=0.8\linewidth]{MOS-graph-vertical.jpg}
+                    \label{fig:MOS-graph-vertical.jpg}
+                \end{figure}
+            \end{minipage}
+        \end{minipage}
+        \begin{minipage}{\linewidth}
+            \begin{figure}[H]
+                \centering
+                \includegraphics[width=0.6\linewidth]{PMOS-zero-gate-voltage-energy-band-diagram.jpg}
+                \label{fig:PMOS-zero-gate-voltage-energy-band-diagram.jpg}
+            \end{figure}
+        \end{minipage}
+    \end{frame}
+
+    \begin{frame} \frametitle{Negative Gate Voltage}
+        \begin{minipage}{\linewidth}
+            \begin{minipage}{0.45\linewidth}
+                \begin{figure}[H]
+                    \centering
+                    \includegraphics[width=\linewidth]{PMOS-negative-gate-voltage.jpg}
+                    \label{fig:PMOS-negative-gate-voltage.jpg}
+                \end{figure}
+            \end{minipage}
+            \begin{minipage}{0.45\linewidth}
+                \begin{figure}[H]
+                    \centering
+                    \includegraphics[width=\linewidth]{PMOS-negative-gate-voltage-energy-band-diagram.jpg}
+                    \label{fig:PMOS-negative-gate-voltage-energy-band-diagram.jpg}
+                \end{figure}
+            \end{minipage}
+        \end{minipage}
+    \end{frame}
+
+    \begin{frame} \frametitle{Positive Gate Voltage}
+        \begin{minipage}{\linewidth}
+            \begin{minipage}{0.45\linewidth}
+                \begin{figure}[H]
+                    \centering
+                    \includegraphics[width=\linewidth]{PMOS-positive-gate-voltage.jpg}
+                    \label{fig:PMOS-positive-gate-voltage.jpg}
+                \end{figure}
+            \end{minipage}
+            \begin{minipage}{0.45\linewidth}
+                \begin{figure}[H]
+                    \centering
+                    \includegraphics[width=\linewidth]{PMOS-positive-gate-voltage-energy-band-diagram.jpg}
+                    \label{fig:PMOS-positive-gate-voltage-energy-band-diagram.jpg}
+                \end{figure}
+            \end{minipage}
+        \end{minipage}
+    \end{frame}
+
+    \begin{frame} \frametitle{Depletion Layer Thickness}
+        \begin{figure}[H]
+            \centering
+            \includegraphics[width=0.6\linewidth]{Energy-band-diagram-PMOS-and-surface-potential.jpg}
+            \label{fig:Energy-band-diagram-PMOS-and-surface-potential.jpg}
+        \end{figure}
+        \begin{equation*}
+            \begin{aligned}
+                \phi_{fp} &= V_t \ln \left( \frac{N_a}{n_i}  \right) \\
+                x_d &= \left( \frac{2 \varepsilon_s \phi_s}{e N_a}  \right)^{1/2} 
+            \end{aligned}
+        \end{equation*}
+        \par $\phi_s$: the surface potential, is the difference (in $V$) between $E_{Fi}$ measured in the bulk semiconductor and $E_{Fi} $ measured at the surface.
+    \end{frame}
+
+    \begin{frame} \frametitle{Threshold Inversion Point}
+        \begin{figure}[H]
+            \centering
+            \includegraphics[width=0.6\linewidth]{Threshold-inversion-point.jpg}
+            \label{fig:Threshold-inversion-point.jpg}
+        \end{figure}
+        \begin{equation*}
+            \phi_s = 2 \phi_{fp} 
+        \end{equation*}
+        \begin{equation*}
+            \boxed{x_{dT} = \left( \frac{4\varepsilon_s \phi_{fp} }{e N_a} \right)^{1/2}  }
+        \end{equation*}
+    \end{frame}
+
+% \subsection{Capacitance–Voltage Characteristics}
+    \begin{frame} \frametitle{Accumulation}
+        \begin{figure}[H]
+            \centering
+            \includegraphics[width=0.9\linewidth]{C-V-accumulation.jpg}
+            \label{fig:C-V-accumulation.jpg}
+        \end{figure}
+        \begin{equation*}
+            C^\prime (\text{acc}) = C_{ox} = \frac{\varepsilon_{ox} }{t_{ox} }  
+        \end{equation*}
+    \end{frame}
+    \begin{frame} \frametitle{Depletion}
+        \begin{figure}[H]
+            \centering
+            \includegraphics[width=0.9\linewidth]{C-V-depletion.jpg}
+            \label{fig:C-V-depletion.jpg}
+        \end{figure}
+        \begin{equation*}
+            \begin{aligned}
+                C^\prime (\text{depl}) &= \frac{C_{ox} C^\prime_{SD} }{C_{ox} + C^\prime_{SD} } \\
+                &= \frac{\varepsilon_{ox} }{t_{ox} + \left( \frac{\varepsilon_{ox} }{\varepsilon_s}  \right)x_d } 
+            \end{aligned}
+        \end{equation*}
+        \begin{equation*}
+            C^\prime_{min} = \frac{\varepsilon_{ox} }{t_{ox} + \left( \frac{\varepsilon_{ox} }{\varepsilon_s}  \right) x_{dT} } 
+        \end{equation*}
+    \end{frame}
+    \begin{frame} \frametitle{Inversion}
+        \begin{figure}[H]
+            \centering
+            \includegraphics[width=0.9\linewidth]{C-V-inversion.jpg}
+            \label{fig:C-V-inversion.jpg}
+        \end{figure}
+        \begin{equation*}
+            C^\prime (\text{inv}) = C_{ox} = \frac{\varepsilon_{ox} }{t_{ox}}
+        \end{equation*}
+    \end{frame}
+
+    \begin{frame} \frametitle{Ideal Low-Frequency C-V Curve}
+        \begin{figure}[H]
+            \centering
+            \includegraphics[width=0.8\linewidth]{C-V-graph-low-frequency.jpg}
+            \label{fig:C-V-graph-low-frequency.jpg}
+        \end{figure}
+        \begin{equation*}
+            \begin{aligned}
+                C^\prime_{FB} = \frac{\varepsilon_{ox} }{t_{ox} + \left( \frac{\varepsilon_{ox} }{\varepsilon_s}  \right) \sqrt{\left( \frac{kT}{e}  \right) \left( \frac{\varepsilon_s}{eN_a}  \right)}} 
+            \end{aligned}
+        \end{equation*}
+    \end{frame}
+
+    \begin{frame} \frametitle{Frequency Effects}
+        \par Two sources of electrons
+        \begin{enumerate}[1.]
+            \item Diffusion of minority carrier electrons.
+            \item Thermal generation of electron-hole pairs within the space charge region.
+        \end{enumerate}
+        \begin{figure}[H]
+            \centering
+            \includegraphics[width=0.8\linewidth]{Frequency-effect.jpg}
+            \label{fig:Frequency-effect.jpg}
+        \end{figure}
+    \end{frame}
+
+% \subsection{Non-Ideal Effects}
+    \begin{frame} \frametitle{Work Function Difference}
+        \begin{figure}[H]
+            \centering
+            \includegraphics[width=0.9\linewidth]{Work-function-difference.jpg}
+            \label{fig:Work-function-difference.jpg}
+        \end{figure}
+        \begin{equation*}
+            \textcolor{gray}{ 
+                \begin{aligned}
+                    \phi_{ms} &= \phi_m^{\prime} - \left( \chi^\prime + \frac{E_g}{2e} + \phi_{fp}  \right) \\
+                    \phi_{ms} &= \phi^\prime_m - \left( \chi^\prime + \frac{E_g}{2e} - \phi_{fn}  \right)
+                \end{aligned}
+            }
+        \end{equation*}
+        \textcolor{gray}{Not required}. 
+    \end{frame}
+
+    \begin{frame} \frametitle{Fixed Charge}
+        \begin{minipage}{\linewidth}
+            \begin{minipage}{0.45\linewidth}
+                \begin{figure}[H]
+                    \centering
+                    \includegraphics[width=0.9\linewidth]{Fixed-charge.jpg}
+                    \label{fig:Fixed-charge.jpg}
+                \end{figure}
+            \end{minipage}
+            \begin{minipage}{0.45\linewidth}
+                \begin{figure}[H]
+                    \centering
+                    \includegraphics[width=0.9\linewidth]{Fixed-charge-energy-band-diagram.jpg}
+                    \label{fig:Fixed-charge-energy-band-diagram.jpg}
+                \end{figure}
+            \end{minipage}
+        \end{minipage}
+    \end{frame}
+    \begin{frame} \frametitle{Adjustment on $V_T$}
+        \begin{equation*}
+            \boxed{
+            \begin{aligned}
+                \left| Q^\prime_{SD} (\text{max}) \right| &= eN_a x_{dT} = 2 \sqrt{e \varepsilon_s N_a \phi_{fp} } \\
+                V_{TN} &= \frac{\left| Q^\prime_{SD} (\text{max}) \right|}{C_{ox} } + V_{FB} + 2 \phi_{fp}  \\
+                V_{TP} &= - \frac{\left| Q^\prime_{SD} (\text{max}) \right|}{C_{ox} } + V_{FB} - 2 \phi_{fn}  \\
+                V_{FB} &= \phi_{ms} - \frac{Q^\prime_{ss} }{C_{ox}}\cdot \frac{x}{d} 
+            \end{aligned}
+            }
+        \end{equation*}
+    \end{frame}
+
+    \begin{frame} \frametitle{Surface States}
+        \begin{minipage}{\linewidth}
+            \begin{minipage}{0.45\linewidth}
+                \begin{figure}[H]
+                    \centering
+                    \includegraphics[width=\linewidth]{Surface-states-midgap.jpg}
+                    \label{fig:Surface-states-midgap.jpg}
+                \end{figure}
+            \end{minipage}
+            \begin{minipage}{0.45\linewidth}
+                \begin{figure}[H]
+                    \centering
+                    \includegraphics[width=0.9\linewidth]{Surface-states.jpg}
+                    \label{fig:Surface-states.jpg}
+                \end{figure}
+            \end{minipage}
+        \end{minipage}
+    \end{frame}
+
+    \begin{frame} \frametitle{MOSFET}
+        \begin{figure}[H]
+            \centering
+            \begin{subfigure}[t]{0.45\linewidth}
+                \centering
+                \includegraphics[width=0.9\linewidth]{NMOS-enhancement.jpg}
+                \caption{n-channel enhancement MOSFET}
+                \label{subfig:NMOS-enhancement.jpg}
+            \end{subfigure}
+            \begin{subfigure}[t]{0.45\linewidth}
+                \centering
+                \includegraphics[width=0.9\linewidth]{NMOS-depletion.jpg}
+                \caption{n-channel depletion MOSFET}
+                \label{subfig:NMOS-depletion.jpg}
+            \end{subfigure}
+        \end{figure}
+        
+        \par \textcolor{blue}{Enhancement mode}: the semiconductor substrate is not inverted directly under the oxide with zero gate voltage.
+        \par \textcolor{blue}{Depletion mode}: a p-channel region exists under the oxide with $0V$ applied to the gate.
+    \end{frame}
+    \begin{frame} \frametitle{MOSFET}
+        \begin{figure}[H]
+            \centering
+            \begin{subfigure}[t]{0.45\linewidth}
+                \centering
+                \includegraphics[width=0.9\linewidth]{PMOS-enhancement.jpg}
+                \caption{p-channel enhancement MOSFET}
+                \label{subfig:PMOS-enhancement.jpg}
+            \end{subfigure}
+            \begin{subfigure}[t]{0.45\linewidth}
+                \centering
+                \includegraphics[width=0.9\linewidth]{PMOS-depletion.jpg}
+                \caption{p-channel depletion MOSFET}
+                \label{subfig:PMOS-depletion.jpg}
+            \end{subfigure}
+        \end{figure}
+    \end{frame}
+
+    \begin{frame} \frametitle{$V_{GS}$ - $V_{T} $}
+        \begin{figure}[H]
+            \centering
+            \includegraphics[width=0.9\linewidth]{Current-voltage-relationship.jpg}
+            \caption{(a) $V_{GS} < V_T$, (b) $V_{GS} > V_T$}
+            \label{fig:Current-voltage-relationship.jpg}
+        \end{figure}
+        \begin{itemize}
+            \item $V_{GS} < V_T$: no inversion layer, no current.
+            \item $V_{GS} > V_T$: inversion layer created, current flow from drain to source.
+        \end{itemize}
+    \end{frame}
+
+    \begin{frame} \frametitle{$V_{DS} $ when $V_{GS} > V_{T} $}
+        \begin{itemize}
+            \item $V_{DS} $ low ($V_{DS} < V_{GS} - V_T$): act as a controllable resistor.
+            \begin{equation*}
+                \begin{aligned}
+                    \boxed{I_D = \mu_n C_{ox} \frac{W}{L} \left( V_{GS}  - V_T - \frac{V_{DS}}{2}  \right) V_{DS}}
+                \end{aligned}
+            \end{equation*}
+            \item $V_{DS}$ high ($V_{DS} \ge V_{GS} - V_T $): saturation
+            \begin{equation*}
+                \begin{aligned}
+                    \boxed{I_D = \mu_n C_{ox} \frac{W}{2L} \left( V_{GS} - V_T \right)^2 \quad (\text{saturation})}
+                \end{aligned}
+            \end{equation*}
+        \end{itemize}
+    \end{frame}
+
+    \begin{frame} \frametitle{$V_{GS}$ - $V_{T} $}
+        \begin{figure}[H]
+            \centering
+            \begin{subfigure}[b]{0.45\linewidth}
+                \centering
+                \includegraphics[width=0.9\linewidth]{Vgs-increasing-1.jpg}
+                \label{subfig:Vgs-increasing-1.jpg}
+            \end{subfigure}
+            \begin{subfigure}[b]{0.45\linewidth}
+                \centering
+                \includegraphics[width=0.9\linewidth]{Vgs-increasing-2.jpg}
+                \label{subfig:Vgs-increasing-2.jpg}
+            \end{subfigure}
+        \end{figure}
+        \par After pinch off: the electrons are injected into the space charge region where they are swept by the E-field to the drain contact.
+    \end{frame}
+
+    \begin{frame} \frametitle{Transconductance}
+        \begin{equation*}
+            \begin{aligned}
+                g_{m} &= \frac{\partial I_D}{\partial V_{GS} } \\ 
+                &= \left\{
+                    \begin{aligned}
+                        & \mu_n C_{ox} \frac{W}{L} V_{DS} ,\qquad&& 0 < V_{DS} < V_{GS} - V_T \\
+                        & \mu_n C_{ox} \frac{W}{L} \left( V_{GS}  - V_T \right) ,\qquad&& V_{DS} > V_{GS} - V_T
+                    \end{aligned}
+                \right.
+            \end{aligned}
+        \end{equation*}
+    \end{frame}
+
+    \begin{frame} \frametitle{Substrate Bias Effects}
+        \begin{figure}[H]
+            \centering
+            \includegraphics[width=0.9\linewidth]{Substrate-bias-effects.jpg}
+            \label{fig:Substrate-bias-effects.jpg}
+        \end{figure}
+        \begin{equation*}
+            \begin{aligned}
+                V_{SB} = 0 :\quad & Q^\prime_{SD} (\text{max}) = - \sqrt{2 e \varepsilon_s N_a (2 \phi_{fp} )} \\
+                V_{SB} > 0 :\quad & Q^\prime_{SD} = - \sqrt{2 e \varepsilon_s N_a (2 \phi_{fp} + V_{SB} )} \\
+            \end{aligned}
+        \end{equation*}
+        \begin{equation*}
+            \boxed{\Delta V_T = - \frac{\Delta Q^\prime_{SD} }{C_{ox} } = \frac{\sqrt{2 e \varepsilon_s N_a}}{C_{ox} }  \left[ \sqrt{2\phi_{fp} + V_{SB}  } - \sqrt{2 \phi_{fp}}\right] }
+        \end{equation*}
+        where $\Delta V_T = V_T(V_{SB} > 0) - V_{T}(V_{SB} = 0) $ for NMOS.
+    \end{frame}
+    \begin{frame} \frametitle{Substrate Bias Effects}
+        \begin{equation*}
+            \boxed{
+            \begin{aligned}
+                \Delta V_T &= - \frac{\Delta Q^\prime_{SD} }{C_{ox} } = \frac{\sqrt{2 e \varepsilon_s N_a}}{C_{ox} }  \left[ \sqrt{2\phi_{fp} + V_{SB}  } - \sqrt{2 \phi_{fp}}\right] \\
+                &= \gamma \left[ \sqrt{2\phi_{fp} + V_{SB}  } - \sqrt{2 \phi_{fp}}\right], \qquad \gamma = \frac{\sqrt{2 e \varepsilon_s N_a}}{C_{ox} }
+            \end{aligned}
+            }
+        \end{equation*}
+    \end{frame}
+
+\section{Chapter 11 - Metal–Oxide–Semiconductor Field-Effect Transistor: Additional Concepts}
+    \begin{frame} \frametitle{I - Subthreshold Conduction (Leakage Current)}
+        \begin{figure}[H]
+            \centering
+            \includegraphics[width=0.4\linewidth]{Subthreshold-condition.jpg}
+            \caption{Comparison of ideal and experimental plots of $\sqrt{I_D}$ versus $V_{GS}$.}
+            \label{fig:Subthreshold-condition.jpg}
+        \end{figure}
+        When $V_{GS} < V_T$, $I_D \propto \exp\left( \frac{qV_{GS} }{nkT}  \right)$
+    \end{frame}
+    \begin{frame} \frametitle{I - Subthreshold Conduction (Leakage Current)}
+        Slope Factor: defined to be the inverse slope of the $\log(I_D)$ vs. $V_{GS} $ characteristic in the subthreshold region.
+        \begin{figure}[H]
+            \centering
+            \includegraphics[width=0.6\linewidth]{Slope-factor.jpg}
+            \label{fig:Slope-factor.jpg}
+        \end{figure}
+        \begin{equation*}
+            S = n \left( \frac{kT}{q} \ln (10) \right) (\text{Volts per decade})
+        \end{equation*}
+        \par $S\ge 60 mV/dec$ at room temperature.
+    \end{frame}
+
+    \begin{frame} \frametitle{II - Channel Length Modulation}
+        \begin{figure}[H]
+            \centering
+            \includegraphics[width=0.6\linewidth]{Channel-length-modulation.jpg}
+            \label{fig:Channel-length-modulation.jpg}
+        \end{figure}
+        \begin{equation*}
+            \begin{aligned}
+                 I^\prime_D &= \mu_n C_{ox} \frac{W}{2L} \left[\left( V_{GS} - V_T \right)^2  (1 + \lambda V_{DS}) \right] \\
+                %  I^\prime_D &= \frac{L}{L - \Delta L} I_D
+            \end{aligned}
+        \end{equation*}
+    \end{frame}
+
+    \begin{frame} \frametitle{III - Velocity Saturation}
+        \begin{equation*}
+            \begin{aligned}
+                I_{DSAT} &= WC_{ox} \left[ V_{GS} - V_{T} - \frac{V_{DSAT} }{2}  \right] v_{sat} \\
+            \end{aligned}
+        \end{equation*}
+        where $V_{DSAT} = \frac{L}{\mu_n} v_{sat}$.
+    \end{frame}
+
+    \begin{frame} \frametitle{IV - Short Channel Effect}
+        \begin{figure}[H]
+            \centering
+            \includegraphics[width=0.4\linewidth]{Short-channel-effects-long-channel.jpg}
+            \label{fig:Short-channel-effects-long-channel.jpg}
+        \end{figure}
+        \begin{figure}[H]
+            \centering
+            \includegraphics[width=0.5\linewidth]{Short-channel-effects.jpg}
+            \label{fig:Short-channel-effects.jpg}
+        \end{figure}
+    \end{frame}
+
+\section{Chapter 12 - Bipolar Junction Transistor}
+    \begin{frame} \frametitle{Bipolar Junction Transistor}
+        \begin{figure}[H]
+            \centering
+            \includegraphics[width=0.5\linewidth]{BJT-one-pn.jpg}
+            \label{fig:BJT-one-pn.jpg}
+        \end{figure}
+        \begin{figure}[H]
+            \centering
+            \includegraphics[width=0.6\linewidth]{BJT-two-pn.jpg}
+            \label{fig:BJT-two-pn.jpg}
+        \end{figure}
+    \end{frame}
+
+    \begin{frame} \frametitle{Current Volatege Relationship}
+        \begin{figure}[H]
+            \centering
+            \includegraphics[width=0.4\linewidth]{BJT-I-V-curve.jpg}
+            \label{fig:BJT-I-V-curve.jpg}
+        \end{figure}
+        \begin{equation*}
+            \begin{aligned}
+                I_c = \beta I_s \left( \e^{\frac{eV_b}{nkT} } - 1 \right)
+            \end{aligned}
+        \end{equation*}
+        \begin{enumerate}[1.]
+            \item Narrower base $\rightarrow$ larger gain
+            \item $\beta \approx N_D / N_A$, higher emitter-to-base ratio $\rightarrow$ higher gain
+        \end{enumerate}
+    \end{frame}
+    
+    \begin{frame} \frametitle{Early Effect}
+        \begin{figure}[H]
+            \centering
+            \includegraphics[width=0.6\linewidth]{Early-effect.jpg}
+            \label{fig:Early-effect.jpg}
+        \end{figure}
+        \begin{figure}[H]
+            \centering
+            \includegraphics[width=0.6\linewidth]{BJT-two-pn.jpg}
+            \label{fig:BJT-two-pn-early-effect.jpg}
+        \end{figure}
+        \par Trade off:
+        \par \qquad Gain and Early effect.
+        
+    \end{frame}
+
+    \begin{frame} 
+        \begin{center}
+            \textcolor{white}{Golden egg} \\ 
+            \Large\textcolor{blue}{Good luck to your final exam!} \\
+        \end{center}
+    \end{frame}
+
+\end{document} 
